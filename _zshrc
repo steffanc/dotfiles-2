@@ -6,22 +6,7 @@ export ZSH=/Users/schartand/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -30,48 +15,16 @@ ZSH_THEME="robbyrussell"
 plugins=(
     adb
     brew
-    cp
-    fasd
-    gem
     git
-    github
-    gitignore
     gradle
     mvn
     osx
-    pip
-    python
-    rails
-    rake
-    rbenv
-    redis-cli
-    rvm
-    scala
-    ssh-agent
-    sudo
-    tmux
-    vagrant
-    virtualenv
-    virtualenvwrapper
-    vundle
     zsh-syntax-highlighting
 )
 
 # User configuration
 
 source $ZSH/oh-my-zsh.sh
-
-## Java: set JAVA_HOME for Maven and other Java tools
-# /usr/libexec/java_home should print the path to the most recently JDK
-JAVA_HOME_VALUE=`/usr/libexec/java_home`
-if [[ -e "${JAVA_HOME_VALUE}" && "${JAVA_HOME_VALUE}" != "(null)" ]]; then
-  export JAVA_HOME="${JAVA_HOME_VALUE}"
-fi
-
-# dottools: add distribution binary directories to PATH
-if [ -r "$HOME/.tools-cache/setup-dottools-path.sh" ]; then
-  . "$HOME/.tools-cache/setup-dottools-path.sh"
-fi
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -88,19 +41,9 @@ ANDROID_HOME=~/workspace/sdk
 GRADLE_OPTS="-Xms512m -Xmx1024m -XX:MaxPermSize=512m"
 PATH=$PATH:"$ANDROID_HOME/tools"
 PATH=$PATH:"$ANDROID_HOME/platform-tools"
-PATH=$PATH:"$ANDROID_HOME/build-tools/19.1.0"
 export JAVA_HOME ANDROID_HOME GRADLE_OPTS PATH
 launchctl setenv ANDROID_HOME "$ANDROID_HOME"
 launchctl setenv GRADLE_OPTS "$GRADLE_OPTS"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gs='git status'
 alias b='cd ..'
