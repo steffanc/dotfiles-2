@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " General devlopement
 Bundle 'steffanc/ack.vim'
-Bundle 'steffanc/cscopemaps.vim'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-fugitive'
@@ -18,30 +17,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'flazz/vim-colorschemes'
-
-" C++
-Bundle 'steffanc/a.vim'
-
-" Scala
-Bundle 'derekwyatt/vim-scala.git'
-
-" Python
-Bundle 'hynek/vim-python-pep8-indent'
-
-" Javascript
-Bundle 'elzr/vim-json'
-Bundle 'pangloss/vim-javascript'
-Bundle 'briancollins/vim-jst'
-
-" HTML
-Bundle 'amirh/HTML-AutoCloseTag'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'vim-scripts/matchit.zip'
-
-" Go Lang
-Bundle 'fatih/vim-go'
-
-Bundle 'solarnz/thrift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,7 +60,7 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 set splitbelow                  " Puts new split windows to the bottom of the current
 set tabstop=4
 set tags=./.tags;/
-set textwidth=79
+set textwidth=120
 set wildmenu                    " Show list instead of just completing
 set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
 if exists('+undodir')
@@ -169,30 +144,7 @@ set viminfo^=%
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-
 " PLUGINS
-
-" a.vim
-"switches to the header file corresponding to the current file being edited (or vise versa)
-nnoremap <Leader>aa :A<cr>
-"splits and switches
-nnoremap <Leader>as :AS<cr>
-"vertical splits and switches
-nnoremap <Leader>av :AV<cr>
-":AT new tab and switches
-nnoremap <Leader>at :AT<cr>
-":AN cycles through matches
-nnoremap <Leader>an :AN<cr>
-":IH switches to file under cursor
-nnoremap <Leader>ai :IH<cr>
-":IHS splits and switches
-nnoremap <Leader>ais :IHS<cr>
-":IHV vertical splits and switches
-nnoremap <Leader>aiv :IHV<cr>
-":IHT new tab and switches
-nnoremap <Leader>ait :IHT<cr>
-":IHN cycles through matches
-nnoremap <Leader>ain :IHN<cr>
 
 " Ack plugin
 " Use Ag (https://github.com/ggreer/the_silver_searcher) instead of ACK if we
@@ -235,23 +187,3 @@ nnoremap <Leader>gl :Glog<cr>
 " NERD Tree
 nnoremap <Leader>r :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.os$', '\.o$', '\.pyc$','\~$']
-
-" Vim Go
-let g:go_fmt_fail_silently = 1
-let g:go_fmt_command = "goimports"
-
-" more syntax highlighting
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-
-" this doesn't work, turn it off
-let g:go_auto_type_info = 0
-
-" turn fmt off on save
-let g:go_fmt_autosave = 1
-nnoremap <C-w>E :SyntasticCheck<CR>
-
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
